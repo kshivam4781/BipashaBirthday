@@ -10,7 +10,34 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSecretSpace();
     initializeScrollAnimations();
     initializeInteractiveEffects();
+    initializeNavigation();
 });
+
+// Initialize navigation smooth scrolling
+function initializeNavigation() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            
+            if (targetId.startsWith('#')) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 70;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+}
 
 // Initialize date and time based features
 function initializeTimeFeatures() {
@@ -44,13 +71,13 @@ function updateTimeGreeting() {
     let greeting = 'A Special Day for a Special Person';
     
     if (hour >= 5 && hour < 12) {
-        greeting = 'Good Morning, Beautiful! ☀️';
+        greeting = 'Good Morning, Beautiful!';
     } else if (hour >= 12 && hour < 17) {
-        greeting = 'Good Afternoon, My Love! 🌤️';
+        greeting = 'Good Afternoon, My Love!';
     } else if (hour >= 17 && hour < 21) {
-        greeting = 'Good Evening, Sweetheart! 🌅';
+        greeting = 'Good Evening, Sweetheart!';
     } else {
-        greeting = 'Good Night, Beautiful! 🌙';
+        greeting = 'Good Night, Beautiful!';
     }
     
     if (greetingElement) {
@@ -127,20 +154,20 @@ function updateBirthdayMessage() {
     const daysUntilBirthday = getDaysUntilBirthday();
     
     if (daysUntilBirthday === 0) {
-        birthdayWish.textContent = '🎂 Today is Your Special Day! 🎂';
+        birthdayWish.textContent = 'Today is Your Special Day!';
     } else if (daysUntilBirthday === 1) {
-        birthdayWish.textContent = '🎉 Your Birthday is Tomorrow! 🎉';
+        birthdayWish.textContent = 'Your Birthday is Tomorrow!';
     } else if (daysUntilBirthday > 0 && daysUntilBirthday <= 7) {
-        birthdayWish.textContent = `🎈 Only ${daysUntilBirthday} days until your birthday! 🎈`;
+        birthdayWish.textContent = `Only ${daysUntilBirthday} days until your birthday!`;
     } else if (daysUntilBirthday < 0) {
         const daysSince = Math.abs(daysUntilBirthday);
         if (daysSince <= 7) {
-            birthdayWish.textContent = `🎊 Your birthday was ${daysSince} day${daysSince > 1 ? 's' : ''} ago! Still celebrating! 🎊`;
+            birthdayWish.textContent = `Your birthday was ${daysSince} day${daysSince > 1 ? 's' : ''} ago! Still celebrating!`;
         } else {
-            birthdayWish.textContent = 'Today is Your Special Day! 🎂';
+            birthdayWish.textContent = 'Today is Your Special Day!';
         }
     } else {
-        birthdayWish.textContent = 'Today is Your Special Day! 🎂';
+        birthdayWish.textContent = 'Today is Your Special Day!';
     }
 }
 
