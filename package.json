@@ -1,0 +1,16 @@
+{
+  "name": "bipasha-birthday",
+  "version": "1.0.0",
+  "description": "Bipasha's Birthday Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["birthday", "website"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
+
