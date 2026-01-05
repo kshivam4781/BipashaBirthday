@@ -209,6 +209,67 @@ body {
     margin: 0 auto;
 }
 
+/* Essence Section */
+.essence-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.essence-content {
+    text-align: center;
+}
+
+.essence-text {
+    margin-bottom: 50px;
+}
+
+.essence-paragraph {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 25px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.essence-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.essence-feature {
+    padding: 40px 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.essence-feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.feature-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.feature-description {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
 /* Introduction Section */
 .intro-section {
     background: var(--bg-white);
@@ -657,8 +718,22 @@ body {
     
     .intro-paragraph,
     .us-paragraph,
-    .birthday-text {
+    .birthday-text,
+    .essence-paragraph {
         font-size: 1rem;
+    }
+    
+    .essence-features {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .essence-feature {
+        padding: 30px 20px;
+    }
+    
+    .feature-title {
+        font-size: 1.5rem;
     }
     
     .qualities {
