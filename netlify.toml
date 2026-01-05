@@ -1,0 +1,19 @@
+# Netlify Configuration
+# This file is optional - only needed if using Netlify
+
+[build]
+  # No build command needed for static site
+  publish = "."
+
+[[redirects]]
+  # Redirect all routes to index.html for SPA behavior
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables are set in Netlify dashboard:
+# Site settings → Environment variables
+# Example:
+# WEATHER_API_KEY = your_key_here
+# IMAGE_API_KEY = your_key_here
+
