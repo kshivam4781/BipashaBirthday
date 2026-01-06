@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unblock Checklist - Shivam ki Bipasha</title>
+    <link rel="icon" type="image/png" href="asset/images/doggy/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .checklist-hero {
+            min-height: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e1b4b 100%);
+            padding: 10px 40px;
+            position: relative;
+            overflow: hidden;
+            gap: 30px;
+        }
+
+        .checklist-hero-left {
+            flex: 1;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .checklist-image {
+            max-width: 300px;
+            max-height: 350px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            animation: fadeInUp 1s ease-out;
+            z-index: 2;
+            position: relative;
+        }
+
+        .checklist-content {
+            max-width: 800px;
+            text-align: left;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .checklist-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .checklist-section {
+            padding: 40px 0;
+            background: #f5f7fa;
+        }
+
+        .checklist-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .checklist-card {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+        }
+
+        .checklist-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .checklist-item.completed {
+            background: #d4edda;
+            opacity: 0.9;
+        }
+
+        .checklist-item.completed .checklist-label {
+            opacity: 0.7;
+        }
+
+        .checklist-label {
+            flex: 1;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .checklist-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .check-button {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .check-button:hover {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .check-button.checked {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .check-button.checked::after {
+            content: '✓';
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .check-button:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .checklist-hero {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .checklist-image {
+                max-width: 200px;
+            }
+
+            .checklist-title {
+                font-size: 1.5rem;
+            }
+
+            .checklist-card {
+                padding: 30px 20px;
+            }
+
+            .checklist-item {
+                padding: 15px;
+            }
+
+            .checklist-label {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">Happy Birthday My Love</div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+                    <li><a href="developers-note.html" class="nav-link">Developer's Note</a></li>
+                    <li><a href="index.html#messages" class="nav-link">Messages</a></li>
+                    <li><a href="games.html" class="nav-link">Games</a></li>
+                    <li><a href="unblock-checklist.html" class="nav-link">Unblock Checklist</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Checklist Hero Section -->
+    <section class="checklist-hero">
+        <div class="container" style="display: flex; align-items: center; gap: 30px; width: 100%;">
+            <div class="checklist-hero-left">
+                <div class="checklist-content">
+                    <h1 class="checklist-title">Unblock Checklist</h1>
+                    <p style="color: #fff; font-size: 1.1rem; margin-top: 15px; line-height: 1.6;">
+                        Click on each platform to visit and unblock. Let's reconnect across all channels!
+                    </p>
+                </div>
+            </div>
+            <div style="flex-shrink: 0;">
+                <img src="asset/website/cute.gif" alt="Unblock Checklist" class="checklist-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Checklist Section -->
+    <section class="checklist-section">
+        <div class="checklist-container">
+            <div class="section-header">
+                <h2 class="section-title">Unblock Checklist</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="checklist-card">
+                    <div class="checklist-item" data-item="linkedin">
+                        <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="checklist-label" onclick="event.stopPropagation()">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" class="checklist-logo" style="background: #0077b5; padding: 8px;">
+                            <span>LinkedIn</span>
+                        </a>
+                        <button class="check-button" onclick="toggleCheck(event, 'linkedin')"></button>
+                    </div>
+
+                    <div class="checklist-item" data-item="instagram">
+                        <a href="https://www.instagram.com" target="_blank" class="checklist-label" onclick="event.stopPropagation()">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" class="checklist-logo" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); padding: 8px;">
+                            <span>Instagram</span>
+                        </a>
+                        <button class="check-button" onclick="toggleCheck(event, 'instagram')"></button>
+                    </div>
+
+                    <div class="checklist-item" data-item="facebook">
+                        <a href="https://www.facebook.com" target="_blank" class="checklist-label" onclick="event.stopPropagation()">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" class="checklist-logo" style="background: #1877f2; padding: 8px;">
+                            <span>Facebook</span>
+                        </a>
+                        <button class="check-button" onclick="toggleCheck(event, 'facebook')"></button>
+                    </div>
+
+                    <div class="checklist-item" data-item="gmail">
+                        <a href="https://mail.google.com" target="_blank" class="checklist-label" onclick="event.stopPropagation()">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Gmail" class="checklist-logo" style="background: #ea4335; padding: 8px;">
+                            <span>Gmail</span>
+                        </a>
+                        <button class="check-button" onclick="toggleCheck(event, 'gmail')"></button>
+                    </div>
+
+                    <div class="checklist-item" data-item="whatsapp">
+                        <a href="https://web.whatsapp.com" target="_blank" class="checklist-label" onclick="event.stopPropagation()">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp" class="checklist-logo" style="background: #25d366; padding: 8px;">
+                            <span>WhatsApp</span>
+                        </a>
+                        <button class="check-button" onclick="toggleCheck(event, 'whatsapp')"></button>
+                    </div>
+
+                    <div class="checklist-item" data-item="phone">
+                        <a href="tel:" class="checklist-label" onclick="event.stopPropagation()">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/phone.svg" alt="Phone" class="checklist-logo" style="background: #34c759; padding: 8px;">
+                            <span>Phone Call</span>
+                        </a>
+                        <button class="check-button" onclick="toggleCheck(event, 'phone')"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="asset/images/doggy/logo.png" alt="Logo" class="footer-logo">
+                    <h3 class="footer-brand-name">Shivam ki Bipasha</h3>
+                    <p class="footer-tagline">Made with love for Bipasha</p>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html#home" class="footer-link">Home</a></li>
+                            <li><a href="our-story.html" class="footer-link">Our Story</a></li>
+                            <li><a href="index.html#messages" class="footer-link">Messages</a></li>
+                            <li><a href="games.html" class="footer-link">Games</a></li>
+                            <li><a href="unblock-checklist.html" class="footer-link">Unblock Checklist</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Information</h4>
+                        <p class="footer-date" id="footer-date">Happy Birthday!</p>
+                        <p class="footer-time" id="footer-time"></p>
+                        <a href="developers-note.html" class="footer-link">Developer's Note</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 Shivam ki Bipasha. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load saved check states
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.checklist-item');
+            items.forEach(item => {
+                const itemId = item.dataset.item;
+                const savedState = localStorage.getItem(`checklist-${itemId}`);
+                if (savedState === 'true') {
+                    const button = item.querySelector('.check-button');
+                    button.classList.add('checked');
+                    item.classList.add('completed');
+                }
+            });
+        });
+
+        // Toggle check function
+        function toggleCheck(event, itemId) {
+            event.stopPropagation();
+            const item = document.querySelector(`[data-item="${itemId}"]`);
+            const button = item.querySelector('.check-button');
+            
+            if (button.classList.contains('checked')) {
+                button.classList.remove('checked');
+                item.classList.remove('completed');
+                localStorage.setItem(`checklist-${itemId}`, 'false');
+            } else {
+                button.classList.add('checked');
+                item.classList.add('completed');
+                localStorage.setItem(`checklist-${itemId}`, 'true');
+            }
+        }
+    </script>
+</body>
+</html>
+

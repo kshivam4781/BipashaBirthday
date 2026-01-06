@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See Bipasha from Shivam's Eyes - Shivam ki Bipasha</title>
+    <link rel="icon" type="image/png" href="asset/images/doggy/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Hidden Audio */
+        .hidden-audio {
+            display: none;
+        }
+
+        /* Section 1 - First Section with Love Background */
+        .section-1 {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, 
+                #1a0a1a 0%, 
+                #2d0f2d 25%, 
+                #4a1a4a 50%, 
+                #6b2d6b 75%, 
+                #8b3d8b 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px 40px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Hearts Background */
+        .section-1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 105, 180, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 20, 147, 0.05) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Image Container */
+        .image-gallery {
+            position: relative;
+            width: 100%;
+            max-width: 1400px;
+            height: 100%;
+            min-height: 600px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            z-index: 2;
+        }
+
+        .image-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+                        0 0 30px rgba(255, 105, 180, 0.3);
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Animation Classes */
+        .image-item.animate-from-left {
+            animation: slideInFromLeft 1.2s ease-out forwards;
+        }
+
+        .image-item.animate-from-right {
+            animation: slideInFromRight 1.2s ease-out forwards;
+        }
+
+        .image-item.animate-from-top {
+            animation: slideInFromTop 1.2s ease-out forwards;
+        }
+
+        .image-item.animate-from-bottom {
+            animation: slideInFromBottom 1.2s ease-out forwards;
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px) scale(0.8) rotate(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px) scale(0.8) rotate(10deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                opacity: 0;
+                transform: translateY(-100px) scale(0.8) rotate(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            from {
+                opacity: 0;
+                transform: translateY(100px) scale(0.8) rotate(5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotate(0deg);
+            }
+        }
+
+        /* Grid Positioning */
+        .image-item:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .image-item:nth-child(2) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .image-item:nth-child(3) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .image-item:nth-child(4) {
+            grid-column: 1;
+            grid-row: 3;
+        }
+
+        .image-item:nth-child(5) {
+            grid-column: 3;
+            grid-row: 3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .image-item:nth-child(1) {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .image-item:nth-child(2) {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .image-item:nth-child(3) {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .image-item:nth-child(4) {
+                grid-column: 2;
+                grid-row: 2;
+            }
+
+            .image-item:nth-child(5) {
+                grid-column: 1 / 3;
+                grid-row: 3;
+            }
+        }
+
+        .shivam-eyes-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 160px);
+            padding: 40px 20px;
+        }
+
+        .shivam-eyes-content {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .shivam-eyes-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        @media (max-width: 768px) {
+            .shivam-eyes-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">Happy Birthday My Love</div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+                    <li><a href="shivam-eyes.html" class="nav-link">Shivam's Eyes</a></li>
+                    <li><a href="index.html#messages" class="nav-link">Messages</a></li>
+                    <li><a href="games.html" class="nav-link">Games</a></li>
+                    <li><a href="developers-note.html" class="nav-link">Developer's Note</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hidden Audio -->
+    <audio class="hidden-audio" id="section1-audio" autoplay loop>
+        <source src="asset/website/khubsurat.mp4" type="video/mp4">
+    </audio>
+
+    <!-- Section 1 - First Section -->
+    <section class="section-1" id="section-1">
+        <div class="image-gallery" id="image-gallery-1">
+            <div class="image-item" data-direction="left">
+                <img src="asset/images/two.jpg" alt="Bipasha">
+            </div>
+            <div class="image-item" data-direction="right">
+                <img src="asset/images/IMG_20220123_175025.jpg" alt="Bipasha">
+            </div>
+            <div class="image-item" data-direction="top">
+                <img src="asset/images/IMG_20220123_175123.jpg" alt="Bipasha">
+            </div>
+            <div class="image-item" data-direction="bottom">
+                <img src="asset/images/IMG_20220125_134910.jpg" alt="Bipasha">
+            </div>
+            <div class="image-item" data-direction="left">
+                <img src="asset/images/IMG_20220125_135603.jpg" alt="Bipasha">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content (Title Section) -->
+    <section class="shivam-eyes-section">
+        <div class="shivam-eyes-content">
+            <h1 class="shivam-eyes-title">See Bipasha from Shivam's Eyes</h1>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="asset/images/doggy/logo.png" alt="Logo" class="footer-logo">
+                    <h3 class="footer-brand-name">Shivam ki Bipasha</h3>
+                    <p class="footer-tagline">Made with love for Bipasha</p>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html#home" class="footer-link">Home</a></li>
+                            <li><a href="our-story.html" class="footer-link">Our Story</a></li>
+                            <li><a href="index.html#messages" class="footer-link">Messages</a></li>
+                            <li><a href="games.html" class="footer-link">Games</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Information</h4>
+                        <p class="footer-date" id="footer-date">Happy Birthday!</p>
+                        <p class="footer-time" id="footer-time"></p>
+                        <a href="developers-note.html" class="footer-link">Developer's Note</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 Shivam ki Bipasha. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Section 1 Image Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const section1 = document.getElementById('section-1');
+            const images = section1.querySelectorAll('.image-item');
+            const audio = document.getElementById('section1-audio');
+
+            // Play audio when section is visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        audio.play().catch(e => console.log('Audio autoplay prevented:', e));
+                    } else {
+                        audio.pause();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(section1);
+
+            // Animate images with staggered timing
+            images.forEach((img, index) => {
+                const direction = img.getAttribute('data-direction');
+                setTimeout(() => {
+                    img.classList.add(`animate-from-${direction}`);
+                }, index * 300); // Stagger by 300ms
+            });
+
+            // Continuous animation - images fade and reappear
+            setInterval(() => {
+                images.forEach((img, index) => {
+                    setTimeout(() => {
+                        img.style.opacity = '0';
+                        img.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            const direction = img.getAttribute('data-direction');
+                            img.className = `image-item animate-from-${direction}`;
+                        }, 500);
+                    }, index * 200);
+                });
+            }, 15000); // Repeat every 15 seconds
+        });
+    </script>
+</body>
+</html>
+

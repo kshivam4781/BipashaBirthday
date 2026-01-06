@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Shivam ki Bipasha</title>
+    <link rel="icon" type="image/png" href="asset/images/doggy/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">Happy Birthday My Love</div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+                    <li><a href="shivam-eyes.html" class="nav-link">Shivam's Eyes</a></li>
+                    <li><a href="index.html#messages" class="nav-link">Messages</a></li>
+                    <li><a href="games.html" class="nav-link">Games</a></li>
+                    <li><a href="developers-note.html" class="nav-link">Developer's Note</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Games Hero Section -->
+    <section class="games-hero">
+        <div class="container" style="display: flex; align-items: center; gap: 30px; width: 100%;">
+            <div class="games-hero-left">
+                <div class="games-content">
+                    <h1 class="games-title">Games</h1>
+                    <p style="color: #fff; font-size: 1.1rem; margin-top: 15px; line-height: 1.6;">
+                        Discover fun and interactive games designed with love. Each game is a special experience waiting for you to explore!
+                    </p>
+                </div>
+            </div>
+            <div style="flex-shrink: 0;">
+                <img src="asset/website/giphy.gif" alt="Games" class="games-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Content Section -->
+    <section class="games-note-section">
+        <div class="games-note-container">
+            <div class="games-note-left">
+                <div class="games-content-wrapper">
+                    <div class="section-header">
+                        <h2 class="section-title">Choose Your Game</h2>
+                        <div class="title-underline"></div>
+                    </div>
+                    <div class="games-grid">
+                        <a href="compatibility.html" class="game-card">
+                            <h3 class="game-card-title">Love Compatibility Calculator</h3>
+                            <p class="game-card-description">Enter your names and dates of birth to discover your compatibility percentage!</p>
+                            <div class="game-card-button">Play Now →</div>
+                        </a>
+                        <a href="tic-tac-toe.html" class="game-card">
+                            <h3 class="game-card-title">Face Tic-Tac-Toe</h3>
+                            <p class="game-card-description">Play the classic game with your favorite faces! Choose two-player or challenge the computer.</p>
+                            <div class="game-card-button">Play Now →</div>
+                        </a>
+                        <!-- More game cards can be added here in the future -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .games-hero {
+            min-height: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e1b4b 100%);
+            padding: 10px 40px;
+            position: relative;
+            overflow: hidden;
+            gap: 30px;
+        }
+
+        .games-hero-left {
+            flex: 1;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .games-image {
+            max-width: 300px;
+            max-height: 350px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            animation: fadeInUp 1s ease-out;
+            z-index: 2;
+            position: relative;
+        }
+
+        .games-content {
+            max-width: 800px;
+            text-align: left;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .games-note-section {
+            padding: 40px 0;
+            background: #f5f7fa;
+        }
+
+        .games-note-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .games-note-left {
+            flex: 1;
+        }
+
+        .games-content-wrapper {
+            width: 100%;
+        }
+
+        .games-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .game-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: block;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .game-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .game-card-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .game-card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .game-card-description {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .game-card-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .game-card:hover .game-card-button {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .games-hero {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .games-image {
+                max-width: 200px;
+            }
+
+            .games-title {
+                font-size: 1.5rem;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .game-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="asset/images/doggy/logo.png" alt="Logo" class="footer-logo">
+                    <h3 class="footer-brand-name">Shivam ki Bipasha</h3>
+                    <p class="footer-tagline">Made with love for Bipasha</p>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html#home" class="footer-link">Home</a></li>
+                            <li><a href="our-story.html" class="footer-link">Our Story</a></li>
+                            <li><a href="index.html#messages" class="footer-link">Messages</a></li>
+                            <li><a href="games.html" class="footer-link">Games</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Information</h4>
+                        <p class="footer-date" id="footer-date">Happy Birthday!</p>
+                        <p class="footer-time" id="footer-time"></p>
+                        <a href="developers-note.html" class="footer-link">Developer's Note</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 Shivam ki Bipasha. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

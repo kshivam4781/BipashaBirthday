@@ -1,4 +1,4 @@
-# Bipasha's Birthday Website 💖
+# Shivam ki Bipasha 💖
 
 A beautiful, responsive birthday website with dynamic date/time features and a secret space.
 

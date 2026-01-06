@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer's Note - Shivam ki Bipasha</title>
+    <link rel="icon" type="image/png" href="asset/images/doggy/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .developer-hero {
+            min-height: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e1b4b 100%);
+            padding: 10px 40px;
+            position: relative;
+            overflow: hidden;
+            gap: 30px;
+        }
+
+        .developer-hero-left {
+            flex: 1;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .developer-image {
+            max-width: 300px;
+            max-height: 350px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            animation: fadeInUp 1s ease-out;
+            z-index: 2;
+            position: relative;
+        }
+
+        .developer-content {
+            max-width: 800px;
+            text-align: left;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .developer-note-section {
+            padding: 40px 0;
+            background: #f5f7fa;
+        }
+
+        .developer-note-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .developer-note-left {
+            flex: 1;
+        }
+
+        .developer-note-right {
+            flex: 1;
+        }
+
+        .developer-note-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .developer-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .developer-message {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .developer-message p {
+            margin-bottom: 20px;
+        }
+
+        .developer-message p:last-child {
+            margin-bottom: 0;
+        }
+
+        .developer-video-container {
+            margin-top: 50px;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1.5s ease-out;
+            max-width: 250px;
+            width: 100%;
+        }
+
+        .developer-video {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            background: #000;
+        }
+
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .developer-hero {
+                flex-direction: column;
+                padding: 100px 20px 60px;
+                text-align: center;
+            }
+
+            .developer-hero-left {
+                text-align: center;
+            }
+
+            .developer-title {
+                font-size: 2rem;
+            }
+
+            .developer-image {
+                max-width: 300px;
+                max-height: 400px;
+            }
+
+            .developer-note-container {
+                flex-direction: column;
+            }
+
+            .developer-note-image {
+                max-width: 280px;
+            }
+
+            .developer-message {
+                font-size: 1.1rem;
+                padding: 20px;
+            }
+
+            .developer-video-container {
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">Happy Birthday My Love</div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+                    <li><a href="shivam-eyes.html" class="nav-link">Shivam's Eyes</a></li>
+                    <li><a href="developers-note.html" class="nav-link">Developer's Note</a></li>
+                    <li><a href="index.html#messages" class="nav-link">Messages</a></li>
+                    <li><a href="games.html" class="nav-link">Games</a></li>
+                    <li><a href="unblock-checklist.html" class="nav-link">Unblock Checklist</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Developer's Note Hero Section -->
+    <section class="developer-hero">
+        <div class="developer-hero-left">
+            <h1 class="developer-title">Dev - LOVER's Note</h1>
+        </div>
+        <img src="asset/website/shivam.png" alt="Developer" class="developer-image">
+    </section>
+
+    <!-- Developer's Note Content Section -->
+    <section class="developer-note-section">
+        <div class="developer-note-container">
+            <div class="developer-note-left">
+                <div class="developer-content">
+                    <div class="developer-message">
+                        <p>Just in case, because of this long block, if you have forgotten me:</p>
+                        <p><strong>Let me remind you. This website is developed by this handsome developer.</strong></p>
+                        <p>So if you regret not clicking me, I will post all my handsome pictures here. And I would also like to remind you that the age limit for UPSC is 32, and I still have time, so don't dare leave me!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="developer-note-right">
+                <img src="asset/website/kidd.jpg" alt="Developer" class="developer-note-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer's Video Section -->
+    <section class="developer-note-section" style="background: #0f172a; padding: 80px 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: center;">
+            <div class="developer-video-container">
+                <video id="developer-video" class="developer-video" controls>
+                    <source src="asset/website/thukra.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="asset/images/doggy/logo.png" alt="Logo" class="footer-logo">
+                    <h3 class="footer-brand-name">Shivam ki Bipasha</h3>
+                    <p class="footer-tagline">Made with love for Bipasha</p>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html#home" class="footer-link">Home</a></li>
+                            <li><a href="index.html#about" class="footer-link">About</a></li>
+                            <li><a href="index.html#messages" class="footer-link">Messages</a></li>
+                            <li><a href="games.html" class="footer-link">Games</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Information</h4>
+                        <p class="footer-date" id="footer-date">Happy Birthday!</p>
+                        <p class="footer-time" id="footer-time"></p>
+                        <a href="developers-note.html" class="footer-link">Developer's Note</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 Shivam ki Bipasha. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Video autoplay with 4-second delay (plays only once)
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('developer-video');
+            if (video) {
+                let hasPlayed = false;
+                
+                // Wait 4 seconds before playing
+                setTimeout(function() {
+                    if (!hasPlayed) {
+                        video.play().then(function() {
+                            hasPlayed = true;
+                            // Remove autoplay attribute after playing to ensure it only plays once
+                            video.removeAttribute('autoplay');
+                        }).catch(function(error) {
+                            console.log('Autoplay prevented:', error);
+                            // If autoplay is prevented, user can manually play
+                        });
+                    }
+                }, 4000);
+                
+                // Track if video has ended to ensure it only plays once
+                video.addEventListener('ended', function() {
+                    hasPlayed = true;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

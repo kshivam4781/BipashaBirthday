@@ -24,3 +24,9 @@ Thumbs.db
 dist/
 build/
 
+# Whiteboard data (user-generated content)
+whiteboard-data.json
+
+# Messages data (user-generated content)
+messages-data.json
+

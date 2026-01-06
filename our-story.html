@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - Shivam ki Bipasha</title>
+    <link rel="icon" type="image/png" href="asset/images/doggy/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .story-hero {
+            min-height: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e1b4b 100%);
+            padding: 10px 40px;
+            position: relative;
+            overflow: hidden;
+            gap: 30px;
+        }
+
+        .story-hero-left {
+            flex: 1;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .story-image {
+            max-width: 300px;
+            max-height: 350px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            animation: fadeInUp 1s ease-out;
+            z-index: 2;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        .story-content {
+            max-width: 800px;
+            text-align: left;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .story-section {
+            padding: 60px 0;
+            background: #f5f7fa;
+        }
+
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .story-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .story-message {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 25px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .story-timeline {
+            margin-top: 40px;
+        }
+
+        .timeline-item {
+            background: #ffffff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #8b5cf6;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 6px 30px rgba(139, 92, 246, 0.2);
+        }
+
+        .timeline-item h3 {
+            color: #8b5cf6;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .story-images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .story-image-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .story-image-item:hover {
+            transform: scale(1.05);
+        }
+
+        .story-image-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .story-hero {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .story-image {
+                max-width: 200px;
+            }
+
+            .story-title {
+                font-size: 1.5rem;
+            }
+
+            .story-message {
+                font-size: 1rem;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">Happy Birthday My Love</div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+                    <li><a href="shivam-eyes.html" class="nav-link">Shivam's Eyes</a></li>
+                    <li><a href="developers-note.html" class="nav-link">Developer's Note</a></li>
+                    <li><a href="index.html#messages" class="nav-link">Messages</a></li>
+                    <li><a href="games.html" class="nav-link">Games</a></li>
+                    <li><a href="unblock-checklist.html" class="nav-link">Unblock Checklist</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Story Hero Section -->
+    <section class="story-hero">
+        <div class="container" style="display: flex; align-items: center; gap: 30px; width: 100%;">
+            <div class="story-hero-left">
+                <div class="story-content">
+                    <h1 class="story-title">Our Story</h1>
+                    <p style="color: #fff; font-size: 1.1rem; margin-top: 15px; line-height: 1.6;">
+                        A journey of patience, persistence, and never giving up - from 2011 to forever.
+                    </p>
+                </div>
+            </div>
+            <div style="flex-shrink: 0;">
+                <img src="asset/website/Bipasha.JPG" alt="Our Story" class="story-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Content Section -->
+    <section class="story-section">
+        <div class="story-container">
+            <div class="section-header">
+                <h2 class="section-title">The Beginning</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="story-message">
+                <p>
+                    Our story began long ago, in 2011, when I first gathered the courage to tell you how I felt. 
+                    It wasn't easy, but something about you made it impossible for me to stay silent. When I proposed 
+                    to you, you said you would think about it.
+                </p>
+                <p>
+                    Those three months of waiting felt like an eternity. Every day, I hoped, I wondered, I dreamed. 
+                    But after those three long months, you said no. It was heartbreaking, but I couldn't give up on 
+                    what I felt in my heart.
+                </p>
+            </div>
+
+            <div class="story-timeline">
+                <div class="timeline-item">
+                    <h3>💕 2011 - The First Proposal</h3>
+                    <p>
+                        I proposed to you for the first time. You told me you would think about it, and I waited. 
+                        For three months, I held onto hope, believing that maybe, just maybe, you would say yes. 
+                        But after those three months, you said no. It was difficult, but I knew in my heart that 
+                        this wasn't the end of our story.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>🌟 The Distance Years</h3>
+                    <p>
+                        After school ended, life took us in different directions. I went to Pune, and you went to 
+                        Guwahati for your Bachelors. The distance was hard, but somehow, we found our way back to 
+                        each other. We started talking again, and those conversations reminded me why I had never 
+                        given up hope.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>💖 The Years of Persistence</h3>
+                    <p>
+                        Every year, I would propose to you again. I knew what I wanted, and I wasn't going to let 
+                        distance or time change that. Year after year, I asked, hoping that one day you would see 
+                        what I saw - that we were meant to be together.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>✨ 2017 - The Yes</h3>
+                    <p>
+                        After years of waiting, after years of hoping, after years of never giving up, you finally 
+                        said yes in 2017. That moment was everything I had been waiting for, but I knew our journey 
+                        wasn't over. The struggle didn't end there - but we were finally together, and that was all 
+                        that mattered.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 60px;">
+                <h2 class="section-title">Our Journey</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="story-message">
+                <p>
+                    Our story is one of patience, persistence, and never giving up. From that first proposal in 2011 
+                    to the years of distance, to finally hearing "yes" in 2017 - every moment has been worth it. 
+                    The struggle didn't end when you said yes, but we faced it together, and that made all the difference.
+                </p>
+                <p>
+                    Through the distance, through the years of waiting, through all the challenges we've faced, 
+                    one thing remained constant - my love for you. And now, as we continue our journey together, 
+                    I'm grateful for every moment, every struggle, and every victory we've shared.
+                </p>
+                <p style="text-align: center; font-size: 1.2rem; color: #8b5cf6; font-weight: 600; margin-top: 30px;">
+                    Here's to our story - a story of never giving up, of waiting, and of finally finding each other. 💕
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="asset/images/doggy/logo.png" alt="Logo" class="footer-logo">
+                    <h3 class="footer-brand-name">Shivam ki Bipasha</h3>
+                    <p class="footer-tagline">Made with love for Bipasha</p>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html#home" class="footer-link">Home</a></li>
+                            <li><a href="our-story.html" class="footer-link">Our Story</a></li>
+                            <li><a href="index.html#messages" class="footer-link">Messages</a></li>
+                            <li><a href="games.html" class="footer-link">Games</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Information</h4>
+                        <p class="footer-date" id="footer-date">Happy Birthday!</p>
+                        <p class="footer-time" id="footer-time"></p>
+                        <a href="developers-note.html" class="footer-link">Developer's Note</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 Shivam ki Bipasha. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

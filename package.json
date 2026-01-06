@@ -1,7 +1,7 @@
 {
-  "name": "bipasha-birthday",
+  "name": "shivam-ki-bipasha",
   "version": "1.0.0",
-  "description": "Bipasha's Birthday Website",
+  "description": "Shivam ki Bipasha",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

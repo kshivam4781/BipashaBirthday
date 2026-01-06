@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Bipasha!</title>
+    <title>Shivam ki Bipasha</title>
     <link rel="icon" type="image/png" href="asset/images/doggy/logo.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,78 +15,172 @@
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <div class="logo">Bipasha's Birthday</div>
+                <div class="logo">Happy Birthday My Love</div>
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="essence.html" class="nav-link">Essence</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#celebration" class="nav-link">Celebration</a></li>
-                    <li><a href="note.html" class="nav-link">Note</a></li>
+                    <li><a href="our-story.html" class="nav-link">Our Story</a></li>
+                    <li><a href="shivam-eyes.html" class="nav-link">Shivam's Eyes</a></li>
+                    <li><a href="developers-note.html" class="nav-link">Developer's Note</a></li>
+                    <li><a href="#messages" class="nav-link">Messages</a></li>
+                    <li><a href="games.html" class="nav-link">Games</a></li>
+                    <li><a href="unblock-checklist.html" class="nav-link">Unblock Checklist</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 class="hero-title">Happy Birthday</h1>
-            <h2 class="hero-name">Bipasha</h2>
-            <p class="hero-subtitle" id="time-greeting">A Special Day for a Special Person</p>
-            <div class="time-display" id="current-time"></div>
-            <div class="scroll-indicator">
-                <span>↓</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Essence Section -->
-    <section class="section essence-section" id="essence">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Essence</h2>
-                <div class="title-underline"></div>
-            </div>
-            <div class="content-wrapper">
-                <div class="essence-content">
-                    <div class="essence-text">
-                        <p class="essence-paragraph">
-                            Bipasha embodies a rare combination of grace, strength, and warmth that touches 
-                            everyone she meets. Her presence is like a gentle breeze that brings comfort 
-                            and joy to any room she enters.
-                        </p>
-                        <p class="essence-paragraph">
-                            She carries herself with an elegance that comes from within, radiating kindness 
-                            and compassion in everything she does. Her laughter is infectious, her smile 
-                            is genuine, and her heart is pure gold.
-                        </p>
-                        <p class="essence-paragraph">
-                            To know Bipasha is to know what it means to be truly beautiful—not just in appearance, 
-                            but in spirit, in character, and in the way she makes the world a brighter place 
-                            simply by being in it.
-                        </p>
-                    </div>
-                    <div class="essence-features">
-                        <div class="essence-feature">
-                            <div class="feature-icon">✨</div>
-                            <h3 class="feature-title">Radiant</h3>
-                            <p class="feature-description">Her light shines brightly, illuminating the lives of those around her</p>
-                        </div>
-                        <div class="essence-feature">
-                            <div class="feature-icon">💫</div>
-                            <h3 class="feature-title">Inspiring</h3>
-                            <p class="feature-description">She motivates others to be their best selves through her example</p>
-                        </div>
-                        <div class="essence-feature">
-                            <div class="feature-icon">🌟</div>
-                            <h3 class="feature-title">Extraordinary</h3>
-                            <p class="feature-description">There's something truly special about her that makes her one of a kind</p>
-                        </div>
+    <!-- Hero Sections Container -->
+    <div class="hero-container">
+        <!-- Hero Section 1 (Pretty Slide) -->
+        <section class="hero hero-slide active" id="home">
+            <div class="hero-timer" id="header-timer">
+                <div class="timer-segment">
+                    <div class="timer-label">Days</div>
+                    <div class="timer-box">
+                        <div class="timer-digit" id="timer-days">00</div>
                     </div>
                 </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-segment">
+                    <div class="timer-label">Hours</div>
+                    <div class="timer-box">
+                        <div class="timer-digit" id="timer-hours">00</div>
+                    </div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-segment">
+                    <div class="timer-label">Minutes</div>
+                    <div class="timer-box">
+                        <div class="timer-digit" id="timer-minutes">00</div>
+                    </div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-segment">
+                    <div class="timer-label">Seconds</div>
+                    <div class="timer-box">
+                        <div class="timer-digit" id="timer-seconds">00</div>
+                    </div>
+                </div>
+                <div class="special-message-text" id="special-message-text"></div>
             </div>
-        </div>
-    </section>
+            <div class="hero-decoration">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+            </div>
+            <div class="hero-content-wrapper">
+                <div class="hero-text-left">
+                    <div class="hero-badge">Divine</div>
+                    <h1 class="hero-heading">God created a new year and on the 7th day He gave a reason so pretty that could end the world</h1>
+                    <p class="hero-description">Celebrating the most amazing person with style and love. This special day is not just about celebrating your birthday, but celebrating the amazing person you are and the beautiful bond we share.</p>
+                    <a href="#about" class="hero-button">Explore More</a>
+                </div>
+                <div class="hero-image hero-image-right">
+                    <img src="asset/website/hero.png" alt="Bipasha" class="hero-side-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Section 2 (Good Things Slide) -->
+        <section class="hero hero-slide" id="hero-2">
+            <div class="hero-timer" id="header-timer-2">
+                <div class="timer-segment">
+                    <div class="timer-label">Days</div>
+                    <div class="timer-box">
+                        <div class="timer-digit" id="timer-days-2">00</div>
+                    </div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-segment">
+                    <div class="timer-label">Hours</div>
+                    <div class="timer-box">
+                        <div class="timer-digit" id="timer-hours-2">00</div>
+                    </div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-segment">
+                    <div class="timer-label">Minutes</div>
+                    <div class="timer-box">
+                        <div class="timer-digit" id="timer-minutes-2">00</div>
+                    </div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-segment">
+                    <div class="timer-label">Seconds</div>
+                    <div class="timer-box">
+                        <div class="timer-digit" id="timer-seconds-2">00</div>
+                    </div>
+                </div>
+                <div class="special-message-text" id="special-message-text-2"></div>
+            </div>
+            <div class="hero-decoration">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+            </div>
+            <div class="hero-content-wrapper">
+                <div class="hero-text-left">
+                    <div class="hero-badge">Amazing</div>
+                    <h1 class="hero-heading">Beautiful Inside & Out, Kind Heart, Incredible Soul, Simply Perfect</h1>
+                    <p class="hero-description">Bipasha embodies a rare combination of grace, strength, and warmth that touches everyone she meets. Her presence is like a gentle breeze that brings comfort and joy to any room she enters.</p>
+                    <a href="#about" class="hero-button">Learn More</a>
+                </div>
+                <div class="hero-image hero-image-right">
+                    <img src="asset/website/one.jpg" alt="Bipasha" class="hero-side-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Section 3 (Tree Animation Slide) -->
+        <section class="hero hero-slide" id="hero-3">
+            <div class="hero-timer" id="header-timer-3">
+                <div class="timer-segment">
+                    <div class="timer-label">Days</div>
+                    <div class="timer-box">
+                        <div class="timer-digit" id="timer-days-3">00</div>
+                    </div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-segment">
+                    <div class="timer-label">Hours</div>
+                    <div class="timer-box">
+                        <div class="timer-digit" id="timer-hours-3">00</div>
+                    </div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-segment">
+                    <div class="timer-label">Minutes</div>
+                    <div class="timer-box">
+                        <div class="timer-digit" id="timer-minutes-3">00</div>
+                    </div>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-segment">
+                    <div class="timer-label">Seconds</div>
+                    <div class="timer-box">
+                        <div class="timer-digit" id="timer-seconds-3">00</div>
+                    </div>
+                </div>
+                <div class="special-message-text" id="special-message-text-3"></div>
+            </div>
+            <div class="hero-decoration">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+            </div>
+            <div class="hero-content-wrapper">
+                <div class="hero-text-left">
+                    <div class="hero-badge">Special</div>
+                    <h1 class="hero-heading">2 ruppee ki pepsi, Bipasha Bhai, Sexy</h1>
+                    <p class="hero-description">Celebrating the most amazing person with style and love. Every moment with you feels like a gift, and I'm grateful for every second we spend together.</p>
+                    <a href="#messages" class="hero-button">Send Message</a>
+                </div>
+                <div class="hero-image hero-image-right">
+                    <img src="asset/website/giphy.gif" alt="Bipasha" class="hero-side-image">
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Introduction to Bipasha -->
     <section class="section intro-section" id="about">
@@ -107,24 +201,9 @@
                             to know her. Today, we celebrate not just another year, but the wonderful person 
                             she is and the happiness she brings to our lives.
                         </p>
-                        <div class="qualities">
-                            <div class="quality-item">
-                                <span class="quality-icon">★</span>
-                                <span>Amazing</span>
-                            </div>
-                            <div class="quality-item">
-                                <span class="quality-icon">★</span>
-                                <span>Beautiful</span>
-                            </div>
-                            <div class="quality-item">
-                                <span class="quality-icon">★</span>
-                                <span>Inspiring</span>
-                            </div>
-                            <div class="quality-item">
-                                <span class="quality-icon">★</span>
-                                <span>Loving</span>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="tree-canvas-container">
+                        <canvas id="tree-canvas" width="1100" height="680"></canvas>
                     </div>
                 </div>
             </div>
@@ -140,31 +219,38 @@
             </div>
             <div class="content-wrapper">
                 <div class="us-content">
-                    <p class="us-paragraph">
-                        Our journey together has been filled with beautiful moments, shared laughter, 
-                        and countless memories that I treasure every single day. Every moment with you 
-                        feels like a gift, and I'm grateful for every second we spend together.
-                    </p>
-                    <p class="us-paragraph">
-                        You've shown me what it means to love and be loved, and for that, I'm forever 
-                        thankful. This special day is not just about celebrating your birthday, but 
-                        celebrating the amazing person you are and the beautiful bond we share.
-                    </p>
-                    <div class="memories-box">
-                        <h3 class="memories-title">Our Journey</h3>
-                        <div class="memory-items">
-                            <div class="memory-item">
-                                <span class="memory-icon">♥</span>
-                                <p>Beautiful moments together</p>
-                            </div>
-                            <div class="memory-item">
-                                <span class="memory-icon">♥</span>
-                                <p>Shared laughter and joy</p>
-                            </div>
-                            <div class="memory-item">
-                                <span class="memory-icon">♥</span>
-                                <p>Countless precious memories</p>
-                            </div>
+                    <div class="us-content-layout">
+                        <div class="us-text-content">
+                            <p class="us-paragraph">
+                                Our story began long ago, in 2011, when I first gathered the courage to tell you how I felt. 
+                                It wasn't easy, but something about you made it impossible for me to stay silent. When I proposed 
+                                to you, you said you would think about it.
+                            </p>
+                            <p class="us-paragraph">
+                                Those three months of waiting felt like an eternity. Every day, I hoped, I wondered, I dreamed. 
+                                But after those three long months, you said no. It was heartbreaking, but I couldn't give up on 
+                                what I felt in my heart.
+                            </p>
+                            <p class="us-paragraph">
+                                After school ended, life took us in different directions. I went to Pune, and you went to 
+                                Guwahati for your Bachelors. The distance was hard, but somehow, we found our way back to 
+                                each other. We started talking again, and those conversations reminded me why I had never 
+                                given up hope.
+                            </p>
+                            <p class="us-paragraph">
+                                Every year, I would propose to you again. I knew what I wanted, and I wasn't going to let 
+                                distance or time change that. Year after year, I asked, hoping that one day you would see 
+                                what I saw - that we were meant to be together.
+                            </p>
+                            <p class="us-paragraph">
+                                After years of waiting, after years of hoping, after years of never giving up, you finally 
+                                said yes in 2017. That moment was everything I had been waiting for. Our story is one of 
+                                patience, persistence, and never giving up. Through the distance, through the years of waiting, 
+                                through all the challenges we've faced, one thing remained constant - my love for you.
+                            </p>
+                        </div>
+                        <div class="us-image-content">
+                            <img src="asset/images/IMG_20220126_115604.jpg" alt="Our Story" class="us-story-image">
                         </div>
                     </div>
                 </div>
@@ -172,34 +258,76 @@
         </div>
     </section>
 
-    <!-- Birthday Celebration Section -->
-    <section class="section birthday-section" id="celebration">
+    <!-- Whiteboard Section -->
+    <section class="section whiteboard-section" id="whiteboard">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">The Celebration</h2>
+                <h2 class="section-title">Leave a Message</h2>
                 <div class="title-underline"></div>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <p class="whiteboard-description" style="margin: 0;">Scribble something on the whiteboard below! Your message will be visible to everyone.</p>
+                    <img src="asset/website/cute.gif" alt="Cute" style="max-height: 150px; width: auto;">
+                </div>
             </div>
-            <div class="content-wrapper">
-                <div class="birthday-content">
-                    <div class="birthday-message">
-                        <h3 class="birthday-wish">Today is Your Special Day!</h3>
-                        <p class="birthday-text">
-                            This website was created with love to celebrate your birthday, Bipasha! 
-                            It's a small token of appreciation for the incredible person you are and 
-                            the happiness you bring into my life every single day.
-                        </p>
-                        <p class="birthday-text">
-                            May this new year of your life be filled with endless joy, success, 
-                            beautiful moments, and all the love you deserve. You deserve the world 
-                            and so much more!
-                        </p>
-                        <div class="celebration-elements">
-                            <div class="celebration-item">★</div>
-                            <div class="celebration-item">★</div>
-                            <div class="celebration-item">★</div>
-                            <div class="celebration-item">★</div>
-                            <div class="celebration-item">★</div>
+            <div class="whiteboard-container">
+                <div class="whiteboard-controls">
+                    <div class="control-group">
+                        <label for="brush-size">Brush Size:</label>
+                        <input type="range" id="brush-size" min="2" max="20" value="5">
+                        <span id="brush-size-value">5</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="brush-color">Color:</label>
+                        <input type="color" id="brush-color" value="#000000">
+                    </div>
+                    <div class="control-group zoom-controls">
+                        <button id="zoom-out-btn" class="control-btn zoom-btn" title="Zoom Out">−</button>
+                        <span id="zoom-level">100%</span>
+                        <button id="zoom-in-btn" class="control-btn zoom-btn" title="Zoom In">+</button>
+                        <button id="reset-zoom-btn" class="control-btn zoom-btn" title="Reset Zoom">⌂</button>
+                    </div>
+                    <button id="fullscreen-btn" class="control-btn fullscreen-btn" title="Fullscreen">⛶</button>
+                    <button id="clear-btn" class="control-btn">Clear</button>
+                    <button id="save-btn" class="control-btn save-btn">Save</button>
+                </div>
+                <div class="canvas-wrapper" id="canvas-wrapper">
+                    <canvas id="whiteboard-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthday Messages Section -->
+    <section class="section messages-section" id="messages">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Birthday Wishes</h2>
+                <div class="title-underline"></div>
+                <p class="messages-description">Leave a birthday message for Bipasha! Your wishes will be displayed here for everyone to see.</p>
+            </div>
+            <div class="messages-container">
+                <div class="message-form-container">
+                    <h3 class="form-title">Write Your Message</h3>
+                    <form id="message-form" class="message-form">
+                        <div class="form-group">
+                            <label for="message-name">Your Name:</label>
+                            <input type="text" id="message-name" name="name" placeholder="Enter your name" required maxlength="50">
                         </div>
+                        <div class="form-group">
+                            <label for="message-text">Your Message:</label>
+                            <textarea id="message-text" name="message" placeholder="Write your birthday wish here..." required maxlength="500" rows="5"></textarea>
+                            <span class="char-count"><span id="char-count">0</span>/500</span>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submit-message-btn">
+                            <span class="btn-text">Submit Message</span>
+                            <span class="btn-loading" style="display: none;">Sending...</span>
+                        </button>
+                    </form>
+                </div>
+                <div class="messages-display-container">
+                    <h3 class="messages-display-title">Messages from Everyone</h3>
+                    <div id="messages-list" class="messages-list">
+                        <div class="loading-messages">Loading messages...</div>
                     </div>
                 </div>
             </div>
@@ -230,13 +358,39 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p class="footer-text">Made with love for Bipasha</p>
-            <p class="footer-date" id="footer-date">Happy Birthday!</p>
-            <p class="footer-time" id="footer-time"></p>
-            <p class="footer-copyright">&copy; 2024 Bipasha's Birthday Website. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="asset/images/doggy/logo.png" alt="Logo" class="footer-logo">
+                    <h3 class="footer-brand-name">Shivam ki Bipasha</h3>
+                    <p class="footer-tagline">Made with love for Bipasha</p>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#home" class="footer-link">Home</a></li>
+                            <li><a href="our-story.html" class="footer-link">Our Story</a></li>
+                            <li><a href="#about" class="footer-link">About</a></li>
+                            <li><a href="#messages" class="footer-link">Messages</a></li>
+                            <li><a href="games.html" class="footer-link">Games</a></li>
+                            <li><a href="unblock-checklist.html" class="footer-link">Unblock Checklist</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Information</h4>
+                        <p class="footer-date" id="footer-date">Happy Birthday!</p>
+                        <p class="footer-time" id="footer-time"></p>
+                        <a href="developers-note.html" class="footer-link">Developer's Note</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 Shivam ki Bipasha. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <script src="tree-animation.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

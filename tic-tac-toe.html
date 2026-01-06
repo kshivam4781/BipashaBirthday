@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe - Shivam ki Bipasha</title>
+    <link rel="icon" type="image/png" href="asset/images/doggy/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">Happy Birthday My Love</div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="essence.html" class="nav-link">Essence</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#whiteboard" class="nav-link">Whiteboard</a></li>
+                    <li><a href="note.html" class="nav-link">Note</a></li>
+                    <li><a href="games.html" class="nav-link">Games</a></li>
+                    <li><a href="developers-note.html" class="nav-link">Developer's Note</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Tic-Tac-Toe Game Section -->
+    <section class="section" style="min-height: 80vh; padding-top: 120px;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Face Tic-Tac-Toe</h2>
+                <div class="title-underline"></div>
+                <p class="messages-description" style="margin-top: 20px;">Play Tic-Tac-Toe with your favorite faces! Choose your game mode below.</p>
+            </div>
+            <div class="content-wrapper">
+                <div class="tic-tac-toe-container">
+                    <!-- Game Mode Selection -->
+                    <div class="game-mode-selection" id="game-mode-selection">
+                        <h3 class="mode-title">Choose Game Mode</h3>
+                        <div class="mode-buttons">
+                            <button class="mode-btn" onclick="startGame('two-player')">
+                                <span class="mode-text">Two Players</span>
+                            </button>
+                            <button class="mode-btn" onclick="startGame('vs-computer')">
+                                <span class="mode-text">Vs Computer</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Game Board -->
+                    <div class="game-board-container" id="game-board-container" style="display: none;">
+                        <div class="game-info">
+                            <div class="player-info">
+                                <div class="player-card player-x active" id="player-x-card">
+                                    <img src="asset/website/face_s.png" alt="Shivam" class="player-face">
+                                    <div class="player-name">Shivam</div>
+                                    <div class="player-status" id="player-x-status">Your Turn</div>
+                                </div>
+                                <div class="vs-divider">VS</div>
+                                <div class="player-card player-o" id="player-o-card">
+                                    <img src="asset/website/face_b.png" alt="Bipasha" class="player-face">
+                                    <div class="player-name">Bipasha</div>
+                                    <div class="player-status" id="player-o-status">Waiting</div>
+                                </div>
+                            </div>
+                            <div class="game-status" id="game-status">Shivam's Turn (X)</div>
+                        </div>
+                        <div class="tic-tac-toe-board" id="game-board">
+                            <div class="cell" data-index="0"></div>
+                            <div class="cell" data-index="1"></div>
+                            <div class="cell" data-index="2"></div>
+                            <div class="cell" data-index="3"></div>
+                            <div class="cell" data-index="4"></div>
+                            <div class="cell" data-index="5"></div>
+                            <div class="cell" data-index="6"></div>
+                            <div class="cell" data-index="7"></div>
+                            <div class="cell" data-index="8"></div>
+                        </div>
+                        <div class="game-controls">
+                            <button class="game-btn reset-btn" onclick="resetGame()">Reset Game</button>
+                            <button class="game-btn back-btn" onclick="backToMenu()">← Back to Menu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .tic-tac-toe-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .game-mode-selection {
+            text-align: center;
+        }
+
+        .mode-title {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .mode-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .mode-btn {
+            flex: 1;
+            min-width: 200px;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: 15px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mode-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+        }
+
+        .mode-icon {
+            font-size: 3rem;
+        }
+
+        .game-info {
+            margin-bottom: 30px;
+        }
+
+        .player-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .player-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            background: var(--bg-light);
+            min-width: 150px;
+        }
+
+        .player-card.active {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(196, 69, 105, 0.2));
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 107, 157, 0.3);
+        }
+
+        .player-card.winner {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 193, 7, 0.3));
+            animation: winnerPulse 1s ease-in-out infinite;
+        }
+
+        @keyframes winnerPulse {
+            0%, 100% { transform: scale(1.05); }
+            50% { transform: scale(1.1); }
+        }
+
+        .player-face {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid var(--primary-color);
+        }
+
+        .player-card.active .player-face {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+        }
+
+        .player-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .player-status {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .vs-divider {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .game-status {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(196, 69, 105, 0.1));
+            border-radius: 10px;
+        }
+
+        .game-status.winner {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 193, 7, 0.2));
+            color: var(--secondary-color);
+        }
+
+        .tic-tac-toe-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto 30px;
+            background: var(--bg-light);
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .cell {
+            aspect-ratio: 1;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cell:hover:not(.filled) {
+            background: rgba(255, 107, 157, 0.1);
+            transform: scale(1.05);
+        }
+
+        .cell.filled {
+            cursor: not-allowed;
+        }
+
+        .cell.x::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('asset/website/face_s.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+        }
+
+        .cell.o::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('asset/website/face_b.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+        }
+
+        .game-controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .game-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .reset-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+        }
+
+        .back-btn {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            border: 2px solid var(--text-light);
+        }
+
+        .back-btn:hover {
+            background: var(--text-light);
+            color: white;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tic-tac-toe-container {
+                padding: 25px;
+            }
+
+            .player-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .vs-divider {
+                transform: rotate(90deg);
+            }
+
+            .tic-tac-toe-board {
+                max-width: 100%;
+            }
+
+            .mode-buttons {
+                flex-direction: column;
+            }
+
+            .mode-btn {
+                min-width: 100%;
+            }
+        }
+    </style>
+
+    <script>
+        let currentPlayer = 'X';
+        let gameMode = '';
+        let board = ['', '', '', '', '', '', '', '', ''];
+        let gameActive = true;
+
+        const winningConditions = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+
+        function startGame(mode) {
+            gameMode = mode;
+            document.getElementById('game-mode-selection').style.display = 'none';
+            document.getElementById('game-board-container').style.display = 'block';
+            resetGame();
+        }
+
+        function backToMenu() {
+            document.getElementById('game-mode-selection').style.display = 'block';
+            document.getElementById('game-board-container').style.display = 'none';
+            resetGame();
+        }
+
+        function resetGame() {
+            board = ['', '', '', '', '', '', '', '', ''];
+            currentPlayer = 'X';
+            gameActive = true;
+            updateDisplay();
+            
+            const cells = document.querySelectorAll('.cell');
+            cells.forEach(cell => {
+                cell.classList.remove('x', 'o', 'filled');
+            });
+        }
+
+        function updateDisplay() {
+            const statusElement = document.getElementById('game-status');
+            const playerXCard = document.getElementById('player-x-card');
+            const playerOCard = document.getElementById('player-o-card');
+            const playerXStatus = document.getElementById('player-x-status');
+            const playerOStatus = document.getElementById('player-o-status');
+
+            // Remove active and winner classes
+            playerXCard.classList.remove('active', 'winner');
+            playerOCard.classList.remove('active', 'winner');
+            statusElement.classList.remove('winner');
+
+            if (!gameActive) {
+                return;
+            }
+
+            if (currentPlayer === 'X') {
+                playerXCard.classList.add('active');
+                playerXStatus.textContent = 'Your Turn';
+                playerOStatus.textContent = 'Waiting';
+                statusElement.textContent = "Shivam's Turn (X)";
+            } else {
+                playerOCard.classList.add('active');
+                playerOStatus.textContent = 'Your Turn';
+                playerXStatus.textContent = 'Waiting';
+                statusElement.textContent = "Bipasha's Turn (O)";
+            }
+        }
+
+        function handleCellClick(index) {
+            if (board[index] !== '' || !gameActive) {
+                return;
+            }
+
+            makeMove(index, currentPlayer);
+
+            if (checkWinner()) {
+                const statusElement = document.getElementById('game-status');
+                const winnerName = currentPlayer === 'X' ? 'Shivam' : 'Bipasha';
+                statusElement.textContent = `${winnerName} Wins!`;
+                statusElement.classList.add('winner');
+                
+                const winnerCard = currentPlayer === 'X' ? 
+                    document.getElementById('player-x-card') : 
+                    document.getElementById('player-o-card');
+                winnerCard.classList.add('winner');
+                
+                gameActive = false;
+                return;
+            }
+
+            if (checkDraw()) {
+                const statusElement = document.getElementById('game-status');
+                statusElement.textContent = "It's a Draw!";
+                gameActive = false;
+                return;
+            }
+
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            updateDisplay();
+
+            // If playing against computer and it's computer's turn
+            if (gameMode === 'vs-computer' && currentPlayer === 'O' && gameActive) {
+                setTimeout(() => {
+                    makeComputerMove();
+                }, 500);
+            }
+        }
+
+        function makeMove(index, player) {
+            board[index] = player;
+            const cell = document.querySelector(`[data-index="${index}"]`);
+            cell.classList.add(player.toLowerCase(), 'filled');
+        }
+
+        function makeComputerMove() {
+            // Simple AI: Try to win, then block, then take center, then random
+            let move = -1;
+
+            // Try to win
+            move = findWinningMove('O');
+            if (move === -1) {
+                // Try to block
+                move = findWinningMove('X');
+            }
+            if (move === -1) {
+                // Take center if available
+                if (board[4] === '') {
+                    move = 4;
+                }
+            }
+            if (move === -1) {
+                // Random move
+                const availableMoves = board.map((cell, index) => cell === '' ? index : -1).filter(index => index !== -1);
+                if (availableMoves.length > 0) {
+                    move = availableMoves[Math.floor(Math.random() * availableMoves.length)];
+                }
+            }
+
+            if (move !== -1) {
+                makeMove(move, 'O');
+
+                if (checkWinner()) {
+                    const statusElement = document.getElementById('game-status');
+                    statusElement.textContent = "Bipasha Wins!";
+                    statusElement.classList.add('winner');
+                    document.getElementById('player-o-card').classList.add('winner');
+                    gameActive = false;
+                    return;
+                }
+
+                if (checkDraw()) {
+                    const statusElement = document.getElementById('game-status');
+                    statusElement.textContent = "It's a Draw!";
+                    gameActive = false;
+                    return;
+                }
+
+                currentPlayer = 'X';
+                updateDisplay();
+            }
+        }
+
+        function findWinningMove(player) {
+            for (let condition of winningConditions) {
+                const [a, b, c] = condition;
+                const line = [board[a], board[b], board[c]];
+                const playerCount = line.filter(cell => cell === player).length;
+                const emptyCount = line.filter(cell => cell === '').length;
+
+                if (playerCount === 2 && emptyCount === 1) {
+                    if (board[a] === '') return a;
+                    if (board[b] === '') return b;
+                    if (board[c] === '') return c;
+                }
+            }
+            return -1;
+        }
+
+        function checkWinner() {
+            for (let condition of winningConditions) {
+                const [a, b, c] = condition;
+                if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function checkDraw() {
+            return board.every(cell => cell !== '') && !checkWinner();
+        }
+
+        // Initialize game
+        document.addEventListener('DOMContentLoaded', function() {
+            const cells = document.querySelectorAll('.cell');
+            cells.forEach((cell, index) => {
+                cell.addEventListener('click', () => {
+                    if (gameMode === 'vs-computer' && currentPlayer === 'O') {
+                        return; // Don't allow clicks during computer's turn
+                    }
+                    handleCellClick(index);
+                });
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Made with love for Bipasha</p>
+            <p class="footer-date" id="footer-date">Happy Birthday!</p>
+            <p class="footer-time" id="footer-time"></p>
+            <p class="footer-copyright">&copy; 2024 Shivam ki Bipasha. All rights reserved.</p>
+            <p style="margin-top: 15px;"><a href="developers-note.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem;">Developer's Note</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
