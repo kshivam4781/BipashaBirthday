@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeBirthdayMessages();
     initializeCursorTrail();
     initializeTreeOnScroll();
+    initializeVisitorTracking();
 });
 
 // Initialize mobile menu (hamburger)
@@ -1671,5 +1672,33 @@ function initializeCursorTrail() {
         
         lastMouseX = mouseX;
         lastMouseY = mouseY;
+    });
+}
+
+// Initialize visitor tracking
+function initializeVisitorTracking() {
+    // Don't track on the visitors page itself
+    if (window.location.pathname.includes('visitors.html')) {
+        return;
+    }
+    
+    // Collect visitor information
+    const visitorData = {
+        page: window.location.pathname + window.location.search,
+        screenWidth: window.screen.width,
+        screenHeight: window.screen.height,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        language: navigator.language || navigator.userLanguage
+    };
+    
+    // Send visitor data to server
+    fetch('/api/visitors/track', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(visitorData)
+    }).catch(error => {
+        console.error('Error tracking visitor:', error);
     });
 }

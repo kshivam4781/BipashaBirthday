@@ -30,3 +30,6 @@ whiteboard-data.json
 # Messages data (user-generated content)
 messages-data.json
 
+# Note: visitors-data.json is committed with initial empty array
+# The server will populate it with visitor data when running
+
