@@ -92,6 +92,42 @@ body {
     width: 100%;
 }
 
+/* Hamburger Menu Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: relative;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 3px;
+    background: var(--header-text);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
 .hero-timer,
 .header-timer {
     position: absolute;
@@ -1774,10 +1810,61 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    .header {
+        padding: 12px 0;
+    }
+    
     .nav {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         position: relative;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--header-bg);
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        gap: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+    
+    .nav-links.active {
+        transform: translateX(0);
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 15px 20px;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
     }
     
     .hero-timer,
@@ -1812,10 +1899,6 @@ body {
         padding-top: 15px;
     }
     
-    .nav-links {
-        gap: 20px;
-    }
-    
     .hero-container {
         height: 100vh;
         max-height: 100vh;
@@ -1826,7 +1909,7 @@ body {
         max-height: 100vh;
         flex-direction: column;
         gap: 20px;
-        padding: 20px;
+        padding: 20px 15px;
     }
     
     .hero-text-left {
@@ -1936,6 +2019,37 @@ body {
     .hero-image-center {
         width: 100%;
         padding: 0;
+    }
+    
+    .hero-content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .hero-text-left {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .hero-heading {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .hero-image-right {
+        min-width: auto;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .hero-side-image {
+        max-width: 100%;
+        max-height: 400px;
     }
     
     .floating-shape {
@@ -2066,14 +2180,18 @@ body {
 }
 
 @media (max-width: 480px) {
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+    .logo {
+        font-size: 1rem;
     }
     
-    .logo {
-        font-size: 1.2rem;
+    .nav-links {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+        padding: 12px 15px;
     }
     
     .hero-title {
@@ -2115,6 +2233,18 @@ body {
     
     .countdown-number {
         font-size: 1.5rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section {
+        padding: 50px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 40px;
     }
     
     .whiteboard-container {
@@ -2176,6 +2306,38 @@ body {
     
     .messages-display-container {
         max-height: 500px;
+    }
+    
+    .hero-timer,
+    .header-timer {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        gap: 3px;
+        padding: 4px 6px;
+        transform: scale(0.7);
+    }
+    
+    .hero-timer .timer-box,
+    .header-timer .timer-box {
+        width: 35px;
+        height: 45px;
+    }
+    
+    .hero-timer .timer-digit,
+    .header-timer .timer-digit {
+        font-size: 1.2rem;
+    }
+    
+    .hero-timer .timer-label,
+    .header-timer .timer-label {
+        font-size: 0.5rem;
+    }
+    
+    .hero-timer .timer-separator,
+    .header-timer .timer-separator {
+        font-size: 1rem;
+        padding-top: 12px;
     }
     
     .footer-content {
